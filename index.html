@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Driver Safety Rating</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Driver Safety Rating</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
 </head>
 <body>
 
@@ -18,28 +18,37 @@
 </section>
 
 <section id="driverInfo" class="driver-info hidden">
-  <article>
-    <h4>Driver Information</h4>
-    <div id="driverDetails"></div>
-  </article>
-  
-  <article>
-    <h4>Submit Rating</h4>
-    <form id="ratingForm" class="hidden">
-      <input type="hidden" id="ratedDriverId">
-      <div class="form-group">
-        <label for="safetyRating">Safety Rating:</label>
-        <select class="form-control" id="safetyRating">
-          <option value="1">1 - Poor</option>
-          <option value="2">2 - Fair</option>
-          <option value="3">3 - Good</option>
-          <option value="4">4 - Very Good</option>
-          <option value="5">5 - Excellent</option>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit Rating</button>
-    </form>
-  </article>
+  <div class="info-container">
+    <div class="info">
+      <article>
+        <h4>Driver Information</h4>
+        <br>
+        <div id="driverDetails"></div>
+      </article>
+    </div>
+    
+    <div class="info">
+      <article>
+        <h4>Rate Driver</h4>
+        <br>
+        <form id="ratingForm" class="hidden">
+          <input type="hidden" id="ratedDriverId">
+          <div class="form-group">
+            <!-- <label for="safetyRating">Safety Rating:</label> -->
+            <select class="form-control" id="safetyRating">
+              <option value="1">1 - Poor</option>
+              <option value="2">2 - Fair</option>
+              <option value="3">3 - Good</option>
+              <option value="4">4 - Very Good</option>
+              <option value="5">5 - Excellent</option>
+            </select>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary">Submit Rating</button>
+        </form>
+      </article>
+    </div>  
+  </div> 
 </section>
 
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
