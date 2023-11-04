@@ -8,47 +8,42 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
 </head>
 <body>
-<div id="map" style="height: 400px;"></div>
-<div id="driverInfo" class="driver-info">
+
+<div id="loadingScreen" class="loading-screen">
+    <h1>Map is loading...</h1>
+</div>
+
+<section id="map-container">
+  <div id="map" class="map"></div>
+</section>
+
+<section id="driverInfo" class="driver-info hidden">
+  <article>
     <h4>Driver Information</h4>
-    <div id="driverDetails"></div> <!-- Details will go here -->
+    <div id="driverDetails"></div>
+  </article>
   
+  <article>
     <h4>Submit Rating</h4>
-    <form id="ratingForm" style="display: none;">
+    <form id="ratingForm" class="hidden">
       <input type="hidden" id="ratedDriverId">
       <div class="form-group">
         <label for="safetyRating">Safety Rating:</label>
         <select class="form-control" id="safetyRating">
-          <option>1 - Poor</option>
-          <option>2 - Fair</option>
-          <option>3 - Good</option>
-          <option>4 - Very Good</option>
-          <option>5 - Excellent</option>
+          <option value="1">1 - Poor</option>
+          <option value="2">2 - Fair</option>
+          <option value="3">3 - Good</option>
+          <option value="4">4 - Very Good</option>
+          <option value="5">5 - Excellent</option>
         </select>
       </div>
       <button type="submit" class="btn btn-primary">Submit Rating</button>
     </form>
-  </div>
-
-<!-- Modal for rating - hidden by default -->
-<div id="ratingModal" class="modal">
-    <div class="modal-content">
-        <span class="close-button">×</span>
-        <h2>Rate a Driver</h2>
-        <form id="ratingForm">
-            <select id="safetyRating">
-                <option>1 - Poor</option>
-                <option>2 - Fair</option>
-                <option>3 - Good</option>
-                <option>4 - Very Good</option>
-                <option>5 - Excellent</option>
-            </select>
-            <button type="button" onclick="submitRating()">Submit Rating</button>
-        </form>
-    </div>
-</div>
+  </article>
+</section>
 
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>
